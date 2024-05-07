@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "E-cards API",
-    "description": "E-cards Application",
+    "title": "Contact API",
+    "description": "API documentation for the Contacts API. This API is designed to help you efficiently manage your contact information. Whether you need to create, retrieve, update, or delete contacts, this API has got you covered. With a user-friendly interface and comprehensive functionality, you can seamlessly integrate contact management into your applications.\n\n**Key Features:**\n\n- **Create Contacts:** Use the POST endpoint to add new contacts to your database, providing details like first name, last name, email, favorite color, and birthday in JSON format.\n\n- **Retrieve Contacts:** The GET endpoint allows you to fetch a list of all contacts or retrieve a specific contact by their unique ID.\n\n- **Update Contacts:** Easily update contact information using the PUT endpoint. Send the updated details in JSON format to modify existing contacts.\n\n- **Delete Contacts:** Remove contacts from your database using the DELETE endpoint. Specify the contact's ID to delete a specific entry.\n\n**Sample Requests and Responses:** We've provided sample JSON requests and responses for each endpoint to help you understand how to interact with the API effectively.\n\n**Error Handling:** The API includes error responses and status codes to guide you in case of any issues.\n\n**API Documentation:** Explore the detailed API documentation below to learn how to use each endpoint, the expected request structures, and response formats.\n\nStart managing your contacts effortlessly with the Contacts API. Integrate it into your applications to streamline contact management and enhance user experiences.",
     "version": "1.0.0"
   },
-  "host": "https://e-card-application.onrender.com",
+  "host": "cse341-4.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -14,23 +14,14 @@
     "/api-docs": {
       "get": {
         "description": "",
-        "parameters": [],
-        "responses": {}
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
       }
     },
     "/contacts/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "post": {
         "description": "",
         "parameters": [
@@ -63,6 +54,23 @@
           "201": {
             "description": "Created"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -72,9 +80,6 @@
     "/contacts/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -86,6 +91,15 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -127,6 +141,9 @@
           "204": {
             "description": "No Content"
           },
+          "404": {
+            "description": "Not Found"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -145,6 +162,12 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"
