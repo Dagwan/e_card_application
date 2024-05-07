@@ -1,10 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const cors = require('cors');
+
 
 const port = process.env.PORT || 8080;
 const app = express();
 
+// Enable CORS for all routes
+app.use(cors());
+
+// Middleware for parsing JSON requests
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
