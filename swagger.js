@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
-    description: 'Temple API'
+    title: 'E-cards API',
+    description: 'E-cards Application'
   },
   host: 'https://e-card-application.onrender.com',
   schemes: ['https']
