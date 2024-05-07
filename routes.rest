@@ -1,92 +1,73 @@
 // LOCALHOST
-### create contacts
-POST http://localhost:8080/contacts
-Content-Type: application/json
-
-{
-  "firstName": "Hope",
-  "lastName": "Simon",
-  "email": "hopesimon@gmail.com.com",
-  "favoriteColor": "Green",
-  "birthday": "1999-01-15"
-}
-
-
-### get all contacts
+### Get all contacts
 GET http://localhost:8080/contacts
 
-### get contacts by id
-GET http://localhost:8080/contacts/65172c7bba9e5547e327e239
-###
-GET http://localhost:8080/contacts/65172c7cba9e5547e327e23c
-###
-GET http://localhost:8080/contacts/651732d2bc9d5f52dffce548
-###
-###
-GET http://localhost:8080/contacts/651be5e903ac3bd725aba32b
 
-### 
-GET http://localhost:8080/contacts/651be3845175afdc2a9ee53d
+### Get contact by id
+GET http://localhost:8080/contacts/663a2a79cd9a0483b01d6fad
 
-### 
-GET http://localhost:8080/contacts/651d3d27a0f7f887db3eaac5
 
-### 
-GET http://localhost:8080/contacts/651d4299450bf499c49dd913
-
-### 
-GET http://localhost:8080/contacts/651d8200cb4f80947149c900
-
-### 
-GET http://localhost:8080/contacts/651d820ccb4f80947149c901
-
-### update contact
-PUT http://localhost:8080/contacts/652077a19dcf632d78324d90
-Content-Type: application/json
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
 
 {
-  "firstName": "Dorathy",
-  "lastName": "Mustapha",
-  "email": "dorathy@gmail.com.com",
-  "favoriteColor": "Darkblue",
-  "birthday": "2001-01-15"
+    "firstName":"Ashley",
+    "lastName":"Weaver",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
 }
 
-### delete a contact
-DELETE http://localhost:8080/contacts/652077a19dcf632d78324d90
+
+### PUT contact
+PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Sarah",
+    "lastName":"Birch",
+    "email":"test@gmail.com",
+    "favoriteColor":"Green",
+    "birthday":"12/12/20"
+}
+### DELETE contact
+DELETE http://localhost:8080/contacts/6220b775099269ff7b31ceab HTTP/1.1
+
+// PRODUCTION Deploy
+### Get all contacts
+GET https://cse341-instructor.herokuapp.com/contacts
 
 
-// production
-### Create a New Contact (POST):
-curl -X POST -H "Content-Type: application/json" -d '{
-  "firstName": "Solomon",
-  "lastName": "Josiah",
-  "email": "solomon@gmail.com",
-  "favoriteColor": "Blue",
-  "birthday": "1990-01-01"
-}' https://cse341-4.onrender.com/contacts'
-
-###Read All Contacts (GET):
-curl  https://cse341-3.onrender.com/contacts
-
-###Read a Contact by ID (GET):
-curl  https://cse341-3.onrender.com/contacts/65172c7bba9e5547e327e239
-
-### Update a Contact by ID (PUT):
-curl -X PUT -H "Content-Type: application/json" -d '{
-  "firstName": "Michael",
-  "lastName": "Amos",
-  "email": "moseschris@gmail.com",
-  "favoriteColor": "White",
-  "birthday": "1995-02-15"
-}' https://cse341-3.onrender.com/contacts/6520765f06fa9083db2c5581
+### Get contact by id
+GET https://cse341-instructor.herokuapp.com/contacts/622023f642f9ab4cd6e060b3
 
 
+### Create contact
+POST https://cse341-instructor.herokuapp.com/contacts HTTP/1.1
+content-type: application/json
 
-### Delete a Contact by ID (DELETE):
-curl -X DELETE https://cse341-3.onrender.com/contacts/65172c7bba9e5547e327e239
+{
+    "firstName":"Ashley",
+    "lastName":"Weaver",
+    "email":"aWeaver@test.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
 
 
+### PUT contact
+PUT https://cse341-instructor.herokuapp.com/contacts/6220bcb39cd507e920c75a0b HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Sarah",
+    "lastName":"Birch",
+    "email":"sarahB@gmail.com",
+    "favoriteColor":"Yellow",
+    "birthday":"06/12/20"
+}
 
 
-
+### DELETE contact
+DELETE https://cse341-instructor.herokuapp.com/contacts/6220e34083149913680f9a64 HTTP/1.1
