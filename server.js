@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/db');
-const models = require('./models/contactModel')
+const models = require('./models/e_cardsModel')
 const cors = require('cors');
 
 const port = process.env.PORT || 8080;
@@ -31,7 +31,7 @@ mongodb.initDb((err) => {
   } else {
     app.listen(port, () => {
       console.log(`Running and listening on Port ${port}`);
-      console.log('Contacts successfully initialize');
+      console.log('Ecard successfully initialize');
     });
   }
 });

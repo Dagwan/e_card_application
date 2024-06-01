@@ -4,7 +4,7 @@ const router = express.Router();
 // Include the Swagger documentation route
 router.use('/', require('./swagger'));
 
-// Include the contact routes
-router.use('/contacts', require('./contactRoutes'));
+// Include the e_card routes
+router.use('/e_cards', require('./e_cardRoutes'));
 
 module.exports = router;
