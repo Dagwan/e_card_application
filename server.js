@@ -22,7 +22,10 @@ app.use((req, res, next) => {
 });
 
 // Use routes defined in separate files
-app.use('/api/ecards', ecardRoutes); // Define a base path for ecard routes
+app.use('/', require('./routes'));
+
+// // Use routes defined in separate files
+// app.use('/api/ecards', ecardRoutes); // Define a base path for ecard routes
 
 // Initialize the database connection
 mongodb.initDb((err) => {

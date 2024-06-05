@@ -1,6 +1,6 @@
 // LOCALHOST
 ### create e_cards
-curl -X POST http://localhost:8080/api/ecards \
+curl -X POST http://localhost:8080/ \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "Hope",
@@ -21,13 +21,13 @@ curl -X POST http://localhost:8080/api/ecards \
 }'
 
 ### get all e_cards
-GET http://localhost:8080/api/ecards
+GET http://localhost:8080/
 
 ### get e_cards by id
-GET http://localhost:8080/api/ecards/666047486e1f814575eb9353
+GET http://localhost:8080/66606d26b260db4a4caa5c15
 
 ### update E_card
-curl -X PUT http://localhost:8080/api/ecards/666047486e1f814575eb9353 \
+curl -X PUT http://localhost:8080/666047946e1f814575eb9354 \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "John",
@@ -49,7 +49,7 @@ curl -X PUT http://localhost:8080/api/ecards/666047486e1f814575eb9353 \
 
 
 ### delete a E_card
-DELETE http://localhost:8080/api/ecards/666047486e1f814575eb9353
+DELETE http://localhost:8080/666047946e1f814575eb9354
 
 
 

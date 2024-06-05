@@ -1,4 +1,5 @@
 const swaggerAutogen = require('swagger-autogen')();
+require('dotenv').config();
 
 const doc = {
   info: {
@@ -23,8 +24,9 @@ const doc = {
 
 Start managing your e-cards effortlessly with the E-Card Management API. Integrate it into your applications to streamline e-card management and enhance user experiences.`
   },
-  host: 'https://e-card-application.onrender.com/api/ecards', 
-  schemes: ['https'] 
+  host: process.env.HOST || 'localhost:8080',
+  // basePath: process.env.BASE_PATH || '/',
+  schemes: [process.env.SCHEMES || 'http']
 };
 
 const outputFile = './swagger.json';
@@ -33,3 +35,4 @@ const endpointsFiles = ['./routes/index.js'];
 // generate swagger.json
 swaggerAutogen(outputFile, endpointsFiles, doc);
 console.log('Swagger runs successfully');
+
