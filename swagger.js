@@ -23,7 +23,7 @@ const doc = {
 
 Start managing your e-cards effortlessly with the E-Card Management API. Integrate it into your applications to streamline e-card management and enhance user experiences.`
   },
-  host: 'cse341-4.onrender.com', 
+  host: 'https://e-card-application.onrender.com/api/ecards', 
   schemes: ['https'] 
 };
 
