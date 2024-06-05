@@ -34,23 +34,6 @@ MONGO_URI=mongodb://localhost/E_card_db
 4. Start the application:
 npm start
 
-### Project Structure
-e_card_application/
-├── models/
-│   └── e_card.js          # E-Card Mongoose model
-├── routes/
-│   ├── e_cardRoutes.js    # E-Card API routes
-│   └── index.js           # Main router
-    └── swagger.js         # Swagger route
-    
-├── tests/
-│   └── e_card.test.js     # Test cases for the E-Card API
-├── app.js                 # Express app setup
-├── swagger.json           # Swagger documentation configuration
-├── swagger.js             # Swagger autogen setup
-├── package.json
-└── README.md
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](docs/LICENSE) file for details.
