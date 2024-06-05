@@ -1,130 +1,17 @@
-[
-  {
-    "firstName": "Nanret",
-    "lastName": "Pan'an",
-    "email": "nanretdan@gmail.com",
-    "favoriteColor": "Orange",
-    "birthday": "2002-07-1"
+{
+  "firstName": "Hope",
+  "middleName": "A",
+  "lastName": "Simon",
+  "occupation": "Software Engineer",
+  "position": "Developer",
+  "officeAddress": "123 Tech Street",
+  "headquartersLocation": "Tech City HQ",
+  "subBusinessBranches": ["Branch 1", "Branch 2"],
+  "contactNumber": "+1234567890",
+  "email": "hopesimon@gmail.com",
+  "socialMediaHandles": {
+    "linkedin": "linkedin.com/in/hopesimon",
+    "twitter": "twitter.com/hopesimon"
   },
-  {
-    "firstName": "Emmanuel",
-    "lastName": "Daniel",
-    "email": "emmanuel@gmail.com",
-    "favoriteColor": "Blue",
-    "birthday": "1998-11-17"
-  },
-  {
-    "firstName": "Bovic",
-    "lastName": "David",
-    "email": "bovis@gmail.com",
-    "favoriteColor": "Purple",
-    "birthday": "2002-12-19"
-  },
-  
-    {
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john@example.com",
-      "favoriteColor": "Blue",
-      "birthday": "1990-05-15"
-    },
-    {
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "email": "jane@example.com",
-      "favoriteColor": "Green",
-      "birthday": "1985-08-20"
-    },
-    {
-      "firstName": "Michael",
-      "lastName": "Johnson",
-      "email": "michael@example.com",
-      "favoriteColor": "Red",
-      "birthday": "1992-03-10"
-    },
-    {
-      "firstName": "Emily",
-      "lastName": "Brown",
-      "email": "emily@example.com",
-      "favoriteColor": "Purple",
-      "birthday": "1988-12-05"
-    },
-    {
-      "firstName": "William",
-      "lastName": "Wilson",
-      "email": "william@example.com",
-      "favoriteColor": "Yellow",
-      "birthday": "1995-07-25"
-    },
-    {
-      "firstName": "Olivia",
-      "lastName": "Davis",
-      "email": "olivia@example.com",
-      "favoriteColor": "Pink",
-      "birthday": "1993-01-30"
-    },
-    {
-      "firstName": "James",
-      "lastName": "Lee",
-      "email": "james@example.com",
-      "favoriteColor": "Orange",
-      "birthday": "1989-09-12"
-    },
-    {
-      "firstName": "Sophia",
-      "lastName": "Clark",
-      "email": "sophia@example.com",
-      "favoriteColor": "Brown",
-      "birthday": "1991-04-08"
-    },
-    {
-      "firstName": "Liam",
-      "lastName": "Hall",
-      "email": "liam@example.com",
-      "favoriteColor": "Black",
-      "birthday": "1987-06-18"
-    },
-    {
-      "firstName": "Ava",
-      "lastName": "Miller",
-      "email": "ava@example.com",
-      "favoriteColor": "White",
-      "birthday": "1994-02-22"
-    },
-    {
-      "firstName": "Benjamin",
-      "lastName": "Moore",
-      "email": "benjamin@example.com",
-      "favoriteColor": "Gray",
-      "birthday": "1998-11-07"
-    },
-    {
-      "firstName": "Mia",
-      "lastName": "Johnson",
-      "email": "mia@example.com",
-      "favoriteColor": "Cyan",
-      "birthday": "1996-10-14"
-    },
-    {
-      "firstName": "Ethan",
-      "lastName": "Brown",
-      "email": "ethan@example.com",
-      "favoriteColor": "Magenta",
-      "birthday": "1999-04-28"
-    },
-    {
-      "firstName": "Isabella",
-      "lastName": "Smith",
-      "email": "isabella@example.com",
-      "favoriteColor": "Lavender",
-      "birthday": "1997-07-03"
-    },
-    {
-      "firstName": "Noah",
-      "lastName": "Wilson",
-      "email": "noah@example.com",
-      "favoriteColor": "Teal",
-      "birthday": "2000-08-11"
-    }
-  ]
-  
+  "passportPhotograph": "base64ImageString"
+}
