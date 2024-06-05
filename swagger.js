@@ -2,18 +2,18 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Contact API',
-    description: `API documentation for the Contacts API. This API is designed to help you efficiently manage your contact information. Whether you need to create, retrieve, update, or delete contacts, this API has got you covered. With a user-friendly interface and comprehensive functionality, you can seamlessly integrate contact management into your applications.
+    title: 'E-Card Management API',
+    description: `API documentation for the E-Card Management API. This API is designed to help you manage electronic business cards efficiently. Whether you need to create, retrieve, update, or delete e-cards, this API has got you covered. With a user-friendly interface and comprehensive functionality, you can seamlessly integrate e-card management into your applications.
 
 **Key Features:**
 
-- **Create Contacts:** Use the POST endpoint to add new contacts to your database, providing details like first name, last name, email, favorite color, and birthday in JSON format.
+- **Create E-Cards:** Use the POST endpoint to add new e-cards to your database, providing details like name, occupation, position, office address, contact number, email, social media handles, and passport photograph in JSON format.
 
-- **Retrieve Contacts:** The GET endpoint allows you to fetch a list of all contacts or retrieve a specific contact by their unique ID.
+- **Retrieve E-Cards:** The GET endpoint allows you to fetch a list of all e-cards or retrieve a specific e-card by its unique ID.
 
-- **Update Contacts:** Easily update contact information using the PUT endpoint. Send the updated details in JSON format to modify existing contacts.
+- **Update E-Cards:** Easily update e-card information using the PUT endpoint. Send the updated details in JSON format to modify existing e-cards.
 
-- **Delete Contacts:** Remove contacts from your database using the DELETE endpoint. Specify the contact's ID to delete a specific entry.
+- **Delete E-Cards:** Remove e-cards from your database using the DELETE endpoint. Specify the e-card's ID to delete a specific entry.
 
 **Sample Requests and Responses:** We've provided sample JSON requests and responses for each endpoint to help you understand how to interact with the API effectively.
 
@@ -21,10 +21,10 @@ const doc = {
 
 **API Documentation:** Explore the detailed API documentation below to learn how to use each endpoint, the expected request structures, and response formats.
 
-Start managing your contacts effortlessly with the Contacts API. Integrate it into your applications to streamline contact management and enhance user experiences.`
+Start managing your e-cards effortlessly with the E-Card Management API. Integrate it into your applications to streamline e-card management and enhance user experiences.`
   },
-  host: 'cse341-4.onrender.com',
-  schemes: ['https']
+  host: 'cse341-4.onrender.com', 
+  schemes: ['https'] 
 };
 
 const outputFile = './swagger.json';

@@ -1,5 +1,99 @@
 // LOCALHOST
 ### create e_cards
+curl -X POST http://localhost:8080/api/ecards \
+-H "Content-Type: application/json" \
+-d '{
+  "firstName": "Hope",
+  "middleName": "A",
+  "lastName": "Simon",
+  "occupation": "Software Engineer",
+  "position": "Developer",
+  "officeAddress": "123 Tech Street",
+  "headquartersLocation": "Tech City HQ",
+  "subBusinessBranches": ["Branch 1", "Branch 2"],
+  "contactNumber": "+1234567890",
+  "email": "hopesimon@gmail.com",
+  "socialMediaHandles": {
+    "linkedin": "linkedin.com/in/hopesimon",
+    "twitter": "twitter.com/hopesimon"
+  },
+  "passportPhotograph": "base64ImageString"
+}'
+
+### get all e_cards
+GET http://localhost:8080/api/ecards
+
+### get e_cards by id
+GET http://localhost:8080/api/ecards/666047486e1f814575eb9353
+
+### update E_card
+curl -X PUT http://localhost:8080/api/ecards/666047486e1f814575eb9353 \
+-H "Content-Type: application/json" \
+-d '{
+  "firstName": "John",
+  "middleName": "B",
+  "lastName": "Doe",
+  "occupation": "Data Scientist",
+  "position": "Senior Analyst",
+  "officeAddress": "456 Data Avenue",
+  "headquartersLocation": "Data City HQ",
+  "subBusinessBranches": ["Branch 3", "Branch 4"],
+  "contactNumber": "+9876543210",
+  "email": "johndoe@example.com",
+  "socialMediaHandles": {
+    "linkedin": "linkedin.com/in/johndoe",
+    "twitter": "twitter.com/johndoe"
+  },
+  "passportPhotograph": "newBase64ImageString"
+}'
+
+
+### delete a E_card
+DELETE http://localhost:8080/api/ecards/666047486e1f814575eb9353
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 POST http://localhost:8080/e_cards
 Content-Type: application/json
 
@@ -16,7 +110,7 @@ Content-Type: application/json
 GET http://localhost:8080/e_cards
 
 ### get e_cards by id
-GET http://localhost:8080/e_cards/665605f8192ee55764e1fd1d
+GET http://localhost:8080/e_cards/6660074391243103ae715d7c
 ###
 GET http://localhost:8080/e_cards/65172c7cba9e5547e327e23c
 ###
@@ -41,7 +135,7 @@ GET http://localhost:8080/e_cards/651d8200cb4f80947149c900
 GET http://localhost:8080/e_cards/651d820ccb4f80947149c901
 
 ### update contact
-PUT http://localhost:8080/e_cards/665605f8192ee55764e1fd1d
+PUT http://localhost:8080/e_cards/6660074391243103ae715d7c
 Content-Type: application/json
 
 {
@@ -53,7 +147,7 @@ Content-Type: application/json
 }
 
 ### delete a contact
-DELETE http://localhost:8080/e_cards/665605f8192ee55764e1fd1d
+DELETE http://localhost:8080/e_cards/6660074391243103ae715d7c
 
 
 // production
