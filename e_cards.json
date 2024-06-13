@@ -1,18 +1,41 @@
 {
-  "firstName": "Hope",
-  "middleName": "A",
-  "lastName": "Simon",
-  "gender": "Female",
-  "occupation": "Software Engineer",
-  "position": "Developer",
-  "officeAddress": "123 Tech Street",
-  "headquartersLocation": "Tech City HQ",
-  "subBusinessBranches": ["Branch 1", "Branch 2"],
-  "contactNumber": "+1234567890",
-  "email": "hopesimon@gmail.com",
-  "socialMediaHandles": {
-    "linkedin": "linkedin.com/in/hopesimon",
-    "twitter": "twitter.com/hopesimon"
+ 
+  "create_e_card": {
+    "firstName": "Hope",
+    "middleName": "A",
+    "lastName": "Simon",
+    "gender": "Female",
+    "occupation": "Software Engineer",
+    "position": "Developer",
+    "officeAddress": "123 Tech Street",
+    "headquartersLocation": "Tech City HQ",
+    "subBusinessBranches": ["Branch 1", "Branch 2"],
+    "contactNumber": "+1234567890",
+    "email": "hopesimon@gmail.com",
+    "socialMediaHandles": {
+      "linkedin": "linkedin.com/in/hopesimon",
+      "twitter": "twitter.com/hopesimon"
+    },
+    "passportPhotograph": "base64ImageString"
   },
-  "passportPhotograph": "base64ImageString"
+ 
+
+  "update_e_card": {
+    "firstName": "John",
+    "middleName": "B",
+    "lastName": "Doe",
+    "gender": "Male",
+    "occupation": "Data Scientist",
+    "position": "Senior Analyst",
+    "officeAddress": "456 Data Avenue",
+    "headquartersLocation": "Data City HQ",
+    "subBusinessBranches": ["Branch 3", "Branch 4"],
+    "contactNumber": "+9876543210",
+    "email": "johndoe@example.com",
+    "socialMediaHandles": {
+      "linkedin": "linkedin.com/in/johndoe",
+      "twitter": "twitter.com/johndoe"
+    },
+    "passportPhotograph": "newBase64ImageString"
+  }
 }
