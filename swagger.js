@@ -35,4 +35,3 @@ const endpointsFiles = ['./routes/index.js'];
 // generate swagger.json
 swaggerAutogen(outputFile, endpointsFiles, doc);
 console.log('Swagger runs successfully');
-

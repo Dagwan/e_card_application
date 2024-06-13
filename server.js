@@ -38,5 +38,3 @@ mongodb.initDb((err) => {
     });
   }
 });
-
-

@@ -24,10 +24,10 @@ curl -X POST http://localhost:8080/ \
 GET http://localhost:8080/
 
 ### get e_cards by id
-GET http://localhost:8080/666073e6246ccc33ec3547eb
+GET http://localhost:8080/666afc8cf3d559abd9dbead0
 
 ### update E_card
-curl -X PUT http://localhost:8080/666073e6246ccc33ec3547eb \
+curl -X PUT http://localhost:8080/666afc8cf3d559abd9dbead0 \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "John",

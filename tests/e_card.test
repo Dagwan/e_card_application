@@ -1,0 +1,145 @@
+const request = require('supertest');
+const app = require('../server');
+const mongoose = require('mongoose');
+const ECard = require('../models/e_cardsModel');
+
+beforeAll(async () => {
+  // Connect to the test database
+  const url = 'mongodb://localhost:27017/e_card_test';
+  await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+});
+
+afterAll(async () => {
+  // Clean up and close the database connection
+  await mongoose.connection.dropDatabase();
+  await mongoose.connection.close();
+});
+
+describe('E-Card API', () => {
+  it('should create a new e-card', async () => {
+    const res = await request(app)
+      .post('/e_cards')
+      .send({
+        firstName: 'John',
+        middleName: 'B',
+        lastName: 'Doe',
+        occupation: 'Data Scientist',
+        position: 'Senior Analyst',
+        officeAddress: '456 Data Avenue',
+        headquartersLocation: 'Data City HQ',
+        subBusinessBranches: ['Branch 3', 'Branch 4'],
+        contactNumber: '+9876543210',
+        email: 'johndoe@example.com',
+        socialMediaHandles: {
+          linkedin: 'linkedin.com/in/johndoe',
+          twitter: 'twitter.com/johndoe'
+        },
+        passportPhotograph: 'newBase64ImageString'
+      });
+
+    expect(res.statusCode).toEqual(201);
+    expect(res.body).toHaveProperty('_id');
+  });
+
+  it('should retrieve all e-cards', async () => {
+    const res = await request(app).get('/e_cards');
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toBeInstanceOf(Array);
+  });
+
+  it('should retrieve a specific e-card by ID', async () => {
+    const eCard = new ECard({
+      firstName: 'Jane',
+      middleName: 'C',
+      lastName: 'Doe',
+      occupation: 'Engineer',
+      position: 'Junior Analyst',
+      officeAddress: '789 Data Street',
+      headquartersLocation: 'Data City HQ',
+      subBusinessBranches: ['Branch 5'],
+      contactNumber: '+1234567890',
+      email: 'janedoe@example.com',
+      socialMediaHandles: {
+        linkedin: 'linkedin.com/in/janedoe',
+        twitter: 'twitter.com/janedoe'
+      },
+      passportPhotograph: 'newBase64ImageString'
+    });
+    await eCard.save();
+
+    const res = await request(app).get(`/e_cards/${eCard._id}`);
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toHaveProperty('firstName', 'Jane');
+  });
+
+  it('should update a specific e-card by ID', async () => {
+    const eCard = new ECard({
+      firstName: 'Jake',
+      middleName: 'D',
+      lastName: 'Doe',
+      occupation: 'Manager',
+      position: 'Senior Manager',
+      officeAddress: '1234 Data Blvd',
+      headquartersLocation: 'Data City HQ',
+      subBusinessBranches: ['Branch 6'],
+      contactNumber: '+1112223333',
+      email: 'jakedoe@example.com',
+      socialMediaHandles: {
+        linkedin: 'linkedin.com/in/jakedoe',
+        twitter: 'twitter.com/jakedoe'
+      },
+      passportPhotograph: 'newBase64ImageString'
+    });
+    await eCard.save();
+
+    const res = await request(app)
+      .put(`/e_cards/${eCard._id}`)
+      .send({
+        firstName: 'Jake Updated',
+        middleName: 'D',
+        lastName: 'Doe',
+        occupation: 'Manager',
+        position: 'Senior Manager',
+        officeAddress: '1234 Data Blvd',
+        headquartersLocation: 'Data City HQ',
+        subBusinessBranches: ['Branch 6'],
+        contactNumber: '+1112223333',
+        email: 'jakedoe@example.com',
+        socialMediaHandles: {
+          linkedin: 'linkedin.com/in/jakedoe',
+          twitter: 'twitter.com/jakedoe'
+        },
+        passportPhotograph: 'newBase64ImageString'
+      });
+
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toHaveProperty('firstName', 'Jake Updated');
+  });
+
+  it('should delete a specific e-card by ID', async () => {
+    const eCard = new ECard({
+      firstName: 'Julie',
+      middleName: 'E',
+      lastName: 'Doe',
+      occupation: 'Consultant',
+      position: 'Senior Consultant',
+      officeAddress: '5678 Data Blvd',
+      headquartersLocation: 'Data City HQ',
+      subBusinessBranches: ['Branch 7'],
+      contactNumber: '+4445556666',
+      email: 'juliedoe@example.com',
+      socialMediaHandles: {
+        linkedin: 'linkedin.com/in/juliedoe',
+        twitter: 'twitter.com/juliedoe'
+      },
+      passportPhotograph: 'newBase64ImageString'
+    });
+    await eCard.save();
+
+    const res = await request(app).delete(`/e_cards/${eCard._id}`);
+    expect(res.statusCode).toEqual(200);
+
+    const checkRes = await request(app).get(`/e_cards/${eCard._id}`);
+    expect(checkRes.statusCode).toEqual(404);
+  });
+});
