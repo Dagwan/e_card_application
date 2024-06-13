@@ -2,6 +2,7 @@
   "firstName": "Hope",
   "middleName": "A",
   "lastName": "Simon",
+  "gender": "Female",
   "occupation": "Software Engineer",
   "position": "Developer",
   "officeAddress": "123 Tech Street",
