@@ -6,6 +6,7 @@ curl -X POST http://localhost:8080/ \
   "firstName": "Hope",
   "middleName": "A",
   "lastName": "Simon",
+  "gender": "Female",
   "occupation": "Software Engineer",
   "position": "Developer",
   "officeAddress": "123 Tech Street",
@@ -20,19 +21,21 @@ curl -X POST http://localhost:8080/ \
   "passportPhotograph": "base64ImageString"
 }'
 
+
 ### get all e_cards
 GET http://localhost:8080/
 
 ### get e_cards by id
-GET http://localhost:8080/666afc8cf3d559abd9dbead0
+GET http://localhost:8080/666b1e169c77d91e0f1f9fcb
 
 ### update E_card
-curl -X PUT http://localhost:8080/666afc8cf3d559abd9dbead0 \
+curl -X PUT http://localhost:8080/666b1e169c77d91e0f1f9fcb \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "John",
   "middleName": "B",
   "lastName": "Doe",
+  "gender": "Male",
   "occupation": "Data Scientist",
   "position": "Senior Analyst",
   "officeAddress": "456 Data Avenue",
@@ -47,6 +50,5 @@ curl -X PUT http://localhost:8080/666afc8cf3d559abd9dbead0 \
   "passportPhotograph": "newBase64ImageString"
 }'
 
-
 ### delete a E_card
-DELETE http://localhost:8080/666073e6246ccc33ec3547eb
+DELETE http://localhost:8080/666b1e169c77d91e0f1f9fcb

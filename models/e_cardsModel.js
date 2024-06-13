@@ -15,6 +15,15 @@ const E_cardsSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  gender: {
+    type: String,
+    enum: ['male', 'female', 'other'],
+    required: true
+  },
+  specifiedGender: {
+    type: String,
+    required: false //Optional, only if the gender is 'other'.
+  },
   occupation: {
     type: String,
     required: true

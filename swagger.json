@@ -30,6 +30,12 @@
                 "lastName": {
                   "example": "any"
                 },
+                "gender": {
+                  "example": "any"
+                },
+                "specifiedGender": {
+                  "example": "any"
+                },
                 "occupation": {
                   "example": "any"
                 },
@@ -136,6 +142,12 @@
                   "example": "any"
                 },
                 "lastName": {
+                  "example": "any"
+                },
+                "gender": {
+                  "example": "any"
+                },
+                "specifiedGender": {
                   "example": "any"
                 },
                 "occupation": {
