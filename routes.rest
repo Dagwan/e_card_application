@@ -26,10 +26,10 @@ curl -X POST http://localhost:8080/ \
 GET http://localhost:8080/
 
 ### get e_cards by id
-GET http://localhost:8080/666b1e169c77d91e0f1f9fcb
+GET http://localhost:8080/666d5fd5448a0ca814ddaf6d
 
 ### update E_card
-curl -X PUT http://localhost:8080/666b1e169c77d91e0f1f9fcb \
+curl -X PUT http://localhost:8080/666d5fd5448a0ca814ddaf6d \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "John",
@@ -51,4 +51,4 @@ curl -X PUT http://localhost:8080/666b1e169c77d91e0f1f9fcb \
 }'
 
 ### delete a E_card
-DELETE http://localhost:8080/666b1e169c77d91e0f1f9fcb
+DELETE http://localhost:8080/666d5e7a65a03d5b82459f2f

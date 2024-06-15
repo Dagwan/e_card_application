@@ -155,7 +155,7 @@ const updateEcard = async (req, res) => {
       .replaceOne({ _id: userId }, e_card);
 
     if (response.modifiedCount > 0) {
-      res.status(204).send(); // Successfully updated
+      res.status(201).json({ success: 'Ecard successfully updated', ecardId: response.insertedId });
     } else {
       res.status(404).json({ error: 'Ecard not found.' }); // Document not found
     }
@@ -179,7 +179,7 @@ const deleteEcard = async (req, res) => {
     const response = await mongodb.getDb().db().collection('E_cards').deleteOne({ _id: userId });
 
     if (response.deletedCount > 0) {
-      res.status(204).send();
+      res.status(201).json({ success: 'Ecard successfully deleted', ecardId: response.insertedId });
     } else {
       res.status(500).json({ error: 'Error occurred while deleting the e_card.' });
     }
