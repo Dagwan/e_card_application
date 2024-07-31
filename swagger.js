@@ -27,12 +27,39 @@ Start managing your e-cards effortlessly with the E-Card Management API. Integra
   // Production
   host: 'e-card-application.onrender.com',
   // basePath: process.env.BASE_PATH || '/',
-  schemes: 'https'
+  schemes: 'https',
 
   // Develpoment
   // host: process.env.HOST || 'localhost:8080',
-  // // basePath: process.env.BASE_PATH || '/',
+  // basePath: process.env.BASE_PATH || '/',
   // schemes: [process.env.SCHEMES || 'http']
+  
+  // Schemas definition
+  definitions: {
+    E_card: {
+      type: "object",
+      properties: {
+        firstName: { type: "string", required: true },
+        middleName: { type: "string" },
+        lastName: { type: "string", required: true },
+        gender: { 
+          type: "string", 
+          enum: ["male", "female", "other"], 
+          required: true 
+        },
+        specifiedGender: { type: "string" },
+        occupation: { type: "string", required: true },
+        position: { type: "string", required: true },
+        officeAddress: { type: "string", required: true },
+        headquartersLocation: { type: "string", required: true },
+        subBusinessBranches: { type: "string", required: true },
+        contactNumber: { type: "string", required: true },
+        email: { type: "string", unique: true, required: true },
+        socialMediaHandles: { type: "string", required: true },
+        passportPhotograph: { type: "string", required: true }
+      }
+    }
+  }
 };
 
 const outputFile = './swagger.json';
@@ -41,3 +68,4 @@ const endpointsFiles = ['./routes/index.js'];
 // generate swagger.json
 swaggerAutogen(outputFile, endpointsFiles, doc);
 console.log('Swagger runs successfully');
+

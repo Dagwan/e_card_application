@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongodb = require('./db/db');
-const ecardRoutes = require('./routes/e_cardRoutes'); // Correct import for e_card routes
+const ecardRoutes = require('./routes/e_cardRoutes'); 
 
 const port = process.env.PORT || 8080;
 const app = express();

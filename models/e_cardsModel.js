@@ -9,7 +9,7 @@ const E_cardsSchema = new mongoose.Schema({
   },
   middleName: {
     type: String,
-    required: false // Optional field
+    required: false 
   },
   lastName: {
     type: String,
