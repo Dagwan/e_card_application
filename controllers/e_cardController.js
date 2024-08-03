@@ -213,6 +213,104 @@ module.exports = {
   deleteEcard
 };
 
+
+// // Get all e_cards with optional search and filter parameters
+// const getAllEcards = async (req, res) => {
+//   try {
+//     const {
+//       search,  // For full-text search
+//       firstName, 
+//       middleName, 
+//       lastName, 
+//       gender, 
+//       occupation, 
+//       position, 
+//       officeAddress, 
+//       headquartersLocation, 
+//       contactNumber, 
+//       email, 
+//       socialMediaHandles, 
+//       page = 1, 
+//       limit = 10,
+//       sortBy, 
+//       sortOrder
+//     } = req.query;
+
+//     // Build the query
+//     let query = {};
+
+//     // Full-text search (assuming a text index is created on necessary fields)
+//     if (search) {
+//       query.$text = { $search: search };
+//     }
+//     // Field-specific searches with partial matching
+//     if (firstName) {
+//       query.firstName = { $regex: new RegExp(firstName, 'i') };
+//     }
+//     if (middleName) {
+//       query.middleName = { $regex: new RegExp(middleName, 'i') };
+//     }
+//     if (lastName) {
+//       query.lastName = { $regex: new RegExp(lastName, 'i') };
+//     }
+//     if (gender) {
+//       query.gender = gender;
+//     }
+//     if (occupation) {
+//       query.occupation = { $regex: new RegExp(occupation, 'i') };
+//     }
+//     if (position) {
+//       query.position = { $regex: new RegExp(position, 'i') };
+//     }
+//     if (officeAddress) {
+//       query.officeAddress = { $regex: new RegExp(officeAddress, 'i') };
+//     }
+//     if (headquartersLocation) {
+//       query.headquartersLocation = { $regex: new RegExp(headquartersLocation, 'i') };
+//     }
+//     if (contactNumber) {
+//       query.contactNumber = { $regex: new RegExp(contactNumber, 'i') };
+//     }
+//     if (email) {
+//       query.email = { $regex: new RegExp(email, 'i') };
+//     }
+//     if (socialMediaHandles) {
+//       query.socialMediaHandles = { $regex: new RegExp(socialMediaHandles, 'i') };
+//     }
+
+//     // Sorting
+//     let sort = {};
+//     if (sortBy) {
+//       sort[sortBy] = sortOrder === 'desc' ? -1 : 1;
+//     }
+
+//     // Database query
+//     const db = mongodb.getDb().db();
+//     const collection = db.collection('E_cards');
+
+//     // Get the total count of documents before pagination
+//     const total = await collection.countDocuments(query);
+
+//     // Get the paginated results
+//     const e_cards = await collection.find(query)
+//       .sort(sort)
+//       .skip((page - 1) * limit)
+//       .limit(parseInt(limit))
+//       .toArray();
+
+//     res.setHeader('Content-Type', 'application/json');
+//     res.status(200).json({
+//       total,
+//       page: parseInt(page),
+//       limit: parseInt(limit),
+//       e_cards
+//     });
+//   } catch (error) {
+//     console.error('Error fetching all E_cards:', error);
+//     res.status(500).json({ error: 'An error occurred while fetching all E_cards.' });
+//   }
+// };
+
 // const mongodb = require('../db/db');
 // const ObjectId = require('mongodb').ObjectId;
 // const { validationResult } = require('express-validator');

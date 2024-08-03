@@ -27,21 +27,21 @@ Content-Type: application/json
   "googleMapLink": "http://maps.google.com/?q=Tech+City"
 }
 
-### Get all e_cards
+### Get all e_cards (with search, filter, pagination, and sorting) (?search=John&filter={"gender":"female"}&sort=position:asc&page=1&limit=10)
 GET http://localhost:8080/
 
 ### Get a single e_card by ID
-GET http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+GET http://localhost:8080/66ae727f435834cf378fe3c7
 
 ### Update an existing e_card by ID
-PUT http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+PUT http://localhost:8080/66ae727f435834cf378fe3c7
 Content-Type: application/json
 
 {
-  "firstName": "John",
+  "firstName": "Dorathy",
   "middleName": "A.",
-  "lastName": "Doe",
-  "gender": "Male",
+  "lastName": "Joh",
+  "gender": "Female",
   "occupation": "Software Engineer",
   "position": "Lead Developer",
   "officeAddress": "123 Tech Lane",
@@ -61,7 +61,8 @@ Content-Type: application/json
 }
 
 ### Delete an e_card by ID
-DELETE http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+DELETE http://localhost:8080/66ae727f435834cf378fe3c7
+
 
 
 
