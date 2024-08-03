@@ -1,54 +1,120 @@
-// LOCALHOST
-### create e_cards
-curl -X POST http://localhost:8080/ \
--H "Content-Type: application/json" \
--d '{
-  "firstName": "Hope",
-  "middleName": "A",
-  "lastName": "Simon",
-  "gender": "Female",
-  "occupation": "Software Engineer",
-  "position": "Developer",
-  "officeAddress": "123 Tech Street",
-  "headquartersLocation": "Tech City HQ",
-  "subBusinessBranches": ["Branch 1", "Branch 2"],
-  "contactNumber": "+1234567890",
-  "email": "hopesimon@gmail.com",
-  "socialMediaHandles": {
-    "linkedin": "linkedin.com/in/hopesimon",
-    "twitter": "twitter.com/hopesimon"
-  },
-  "passportPhotograph": "base64ImageString"
-}'
+# // LOCALHOST
 
+### Create a new e_card
+POST http://localhost:8080/
+Content-Type: application/json
 
-### get all e_cards
-GET http://localhost:8080/
-
-### get e_cards by id
-GET http://localhost:8080/666d61f15c1256481479cba2
-
-### update E_card
-curl -X PUT http://localhost:8080/666d61f15c1256481479cba2 \
--H "Content-Type: application/json" \
--d '{
+{
   "firstName": "John",
-  "middleName": "B",
+  "middleName": "A.",
   "lastName": "Doe",
   "gender": "Male",
-  "occupation": "Data Scientist",
-  "position": "Senior Analyst",
-  "officeAddress": "456 Data Avenue",
-  "headquartersLocation": "Data City HQ",
-  "subBusinessBranches": ["Branch 3", "Branch 4"],
-  "contactNumber": "+9876543210",
-  "email": "johndoe@example.com",
+  "occupation": "Software Engineer",
+  "position": "Senior Developer",
+  "officeAddress": "123 Tech Lane",
+  "headquartersLocation": "Tech City",
+  "subBusinessBranches": ["Branch1", "Branch2"],
+  "contactNumber": "+1234567890",
+  "email": "john.doe@example.com",
   "socialMediaHandles": {
-    "linkedin": "linkedin.com/in/johndoe",
-    "twitter": "twitter.com/johndoe"
+    "linkedin": "john_doe",
+    "twitter": "@john_doe"
   },
-  "passportPhotograph": "newBase64ImageString"
-}'
+  "passportPhotograph": "http://example.com/photo.jpg",
+  "businessSlogan": "Innovating the Future",
+  "businessDescription": "We provide cutting-edge software solutions.",
+  "landmarks": ["Landmark1", "Landmark2"],
+  "googleMapLink": "http://maps.google.com/?q=Tech+City"
+}
 
-### delete a E_card
-DELETE http://localhost:8080/666d61f15c1256481479cba2
+### Get all e_cards
+GET http://localhost:8080/
+
+### Get a single e_card by ID
+GET http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+
+### Update an existing e_card by ID
+PUT http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "middleName": "A.",
+  "lastName": "Doe",
+  "gender": "Male",
+  "occupation": "Software Engineer",
+  "position": "Lead Developer",
+  "officeAddress": "123 Tech Lane",
+  "headquartersLocation": "Tech City",
+  "subBusinessBranches": ["Branch1", "Branch3"],
+  "contactNumber": "+1234567890",
+  "email": "john.doe@example.com",
+  "socialMediaHandles": {
+    "linkedin": "john_doe_updated",
+    "twitter": "@john_doe"
+  },
+  "passportPhotograph": "http://example.com/photo_updated.jpg",
+  "businessSlogan": "Innovating the Future",
+  "businessDescription": "We offer innovative software solutions.",
+  "landmarks": ["Landmark1", "Landmark3"],
+  "googleMapLink": "http://maps.google.com/?q=Tech+City+Updated"
+}
+
+### Delete an e_card by ID
+DELETE http://localhost:8080/66ae13d6d8aa07f1ed0eb7c1
+
+
+
+# ### create e_cards
+# curl -X POST http://localhost:8080/ \
+# -H "Content-Type: application/json" \
+# -d '{
+#   "firstName": "Hope",
+#   "middleName": "A",
+#   "lastName": "Simon",
+#   "gender": "Female",
+#   "occupation": "Software Engineer",
+#   "position": "Developer",
+#   "officeAddress": "123 Tech Street",
+#   "headquartersLocation": "Tech City HQ",
+#   "subBusinessBranches": ["Branch 1", "Branch 2"],
+#   "contactNumber": "+1234567890",
+#   "email": "hopesimon@gmail.com",
+#   "socialMediaHandles": {
+#     "linkedin": "linkedin.com/in/hopesimon",
+#     "twitter": "twitter.com/hopesimon"
+#   },
+#   "passportPhotograph": "base64ImageString"
+# }'
+
+
+# ### get all e_cards
+# GET http://localhost:8080/
+
+# ### get e_cards by id
+# GET http://localhost:8080/666d61f15c1256481479cba2
+
+# ### update E_card
+# curl -X PUT http://localhost:8080/666d61f15c1256481479cba2 \
+# -H "Content-Type: application/json" \
+# -d '{
+#   "firstName": "John",
+#   "middleName": "B",
+#   "lastName": "Doe",
+#   "gender": "Male",
+#   "occupation": "Data Scientist",
+#   "position": "Senior Analyst",
+#   "officeAddress": "456 Data Avenue",
+#   "headquartersLocation": "Data City HQ",
+#   "subBusinessBranches": ["Branch 3", "Branch 4"],
+#   "contactNumber": "+9876543210",
+#   "email": "johndoe@example.com",
+#   "socialMediaHandles": {
+#     "linkedin": "linkedin.com/in/johndoe",
+#     "twitter": "twitter.com/johndoe"
+#   },
+#   "passportPhotograph": "newBase64ImageString"
+# }'
+
+# ### delete a E_card
+# DELETE http://localhost:8080/666d61f15c1256481479cba2
